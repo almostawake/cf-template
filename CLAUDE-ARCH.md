@@ -319,10 +319,10 @@ export async function verifyAuth(request: Request, env: Env) {
 
 ```jsonc
 // Add to top-level kv_namespaces array:
-{ "binding": "PUBLIC_JWK_CACHE_KV", "kv_namespace_name": "my-app-jwk-cache" }
+{ "binding": "PUBLIC_JWK_CACHE_KV", "id": "my-app-jwk-cache" }
 
 // Add to staging kv_namespaces array:
-{ "binding": "PUBLIC_JWK_CACHE_KV", "kv_namespace_name": "my-app-jwk-cache-staging" }
+{ "binding": "PUBLIC_JWK_CACHE_KV", "id": "my-app-jwk-cache-staging" }
 ```
 
 
@@ -478,7 +478,7 @@ The `wrangler.jsonc` file defines all bindings. This is the default template —
     { "binding": "DB", "database_name": "my-app-db" }
   ],
   "kv_namespaces": [
-    { "binding": "KV", "kv_namespace_name": "my-app-kv" }
+    { "binding": "KV", "id": "my-app-kv" }
   ],
   "r2_buckets": [
     { "binding": "STORAGE", "bucket_name": "my-app-storage" }
@@ -490,7 +490,7 @@ The `wrangler.jsonc` file defines all bindings. This is the default template —
         { "binding": "DB", "database_name": "my-app-db-staging" }
       ],
       "kv_namespaces": [
-        { "binding": "KV", "kv_namespace_name": "my-app-kv-staging" }
+        { "binding": "KV", "id": "my-app-kv-staging" }
       ],
       "r2_buckets": [
         { "binding": "STORAGE", "bucket_name": "my-app-storage-staging" }
